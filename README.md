@@ -1,14 +1,11 @@
-Create a web application for ToDo lists in the React framework.
+# Create a web application for ToDo lists in the React framework with following functionality:
 
-Required functionality:
-Creating a ToDo list (there can be more than one)
-  
-ToDo list contains:
+# ToDo list contains:
 - Name
 - ToDo items
 - Adding a ToDo item to the list
   
-ToDo item contains:
+# ToDo item contains:
 - Caption
 - Free text
 - Deadline (date and time)
@@ -18,7 +15,7 @@ ToDo item contains:
 - Search for ToDo items within the list
 - Persistence of ToDo lists using an external API (e.g. mockapi.io)
 
-The solution should demonstrate the capabilities to work with (the more the better):
+# The solution should demonstrate the capabilities to work with (the more the better):
 - TypeScript language
 - Advanced React constructs (hooks, functional components, data management)
 - Advanced EcmaScript and TypeScript constructs
