@@ -51,6 +51,15 @@ const App = () => {
     setToDoList(filteredToDos)
   }
 
+  const dateFormatOptions = { 
+    year: 'numeric', 
+    month: 'numeric', 
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric'
+  };
+
+
   return (
     <div className='App'>
       
@@ -65,7 +74,7 @@ const App = () => {
              placeholder="Type your description"
              onChange={handleDescription}
              />     
-      <input type="datetime-local" 
+      <input type="date" 
              value={newDate}
              placeholder={"Set Date"}
              onChange={handleDate}
@@ -76,18 +85,17 @@ const App = () => {
       </form>
       
       <div>
-        
         {toDoList.map((task) => {
           return (
             <div>
-              <h1>{task.title}</h1>
-              <p>{task.description}</p>
-              <p>{task.date.toLocaleString()}</p>
-              <button onClick={() => deleteTask(task.id)}>
-                X
-              </button>
-              </div>
-            )})}
+            <h1>{task.title}</h1>
+            <p>{task.description}</p>
+            <p>{task.date.toLocaleString(dateFormatOptions)}</p>
+            <button onClick={() => deleteTask(task.id)}>
+              X
+            </button>
+        </div>
+        )})}
       
       </div>
     </div>

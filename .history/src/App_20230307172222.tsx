@@ -5,14 +5,13 @@ interface Todo {
   id: number;
   title: string;
   description: string;
-  date: Date;
+  date: any; /* dorobiť typ */
 }
 
 const App = () => {
 
   const [newTitle, setNewTitle] = useState("")
   const [newDescription, setNewDescription] = useState("")
-  const [newDate, setNewDate] = useState("")
   const [toDoList, setToDoList] = useState<Todo[]>([])
   
 
@@ -20,12 +19,8 @@ const App = () => {
     setNewTitle(e.target.value)
   }
 
-  const handleDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleDescription = (e) => {
     setNewDescription(e.target.value)
-  }
-
-  const handleDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewDate(e.target.value)
   }
 
   const addTask = () => {
@@ -33,12 +28,11 @@ const App = () => {
       id: Math.floor(Math.random()* 1000),
       title: newTitle,
       description: newDescription,
-      date: new Date(newDate),
+      date: new Date(),
     };
     setToDoList([...toDoList, newToDo]);
     setNewTitle("");
     setNewDescription("");
-    setNewDate("");
   }
 
   const confirmTask = (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,6 +44,7 @@ const App = () => {
     task.id !== id)
     setToDoList(filteredToDos)
   }
+
 
   return (
     <div className='App'>
@@ -64,30 +59,23 @@ const App = () => {
              value={newDescription}
              placeholder="Type your description"
              onChange={handleDescription}
-             />     
-      <input type="datetime-local" 
-             value={newDate}
-             placeholder={"Set Date"}
-             onChange={handleDate}
-             />         
+             />       
       <button onClick={addTask}>
         Add Task
       </button>    
       </form>
       
       <div>
-        
         {toDoList.map((task) => {
           return (
             <div>
-              <h1>{task.title}</h1>
-              <p>{task.description}</p>
-              <p>{task.date.toLocaleString()}</p>
-              <button onClick={() => deleteTask(task.id)}>
-                X
-              </button>
-              </div>
-            )})}
+            <h1>{task.title}</h1>
+            <h1>{task.description}</h1>
+            <button onClick={() => deleteTask(task.id)}>
+              X
+            </button>
+        </div>
+        )})}
       
       </div>
     </div>

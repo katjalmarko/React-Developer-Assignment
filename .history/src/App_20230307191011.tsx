@@ -76,7 +76,6 @@ const App = () => {
       </form>
       
       <div>
-        
         {toDoList.map((task) => {
           return (
             <div>

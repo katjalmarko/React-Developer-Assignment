@@ -10,7 +10,6 @@ interface Todo {
 
 const App = () => {
 
-  const [newTitle, setNewTitle] = useState("")
   const [newDescription, setNewDescription] = useState("")
   const [newDate, setNewDate] = useState("")
   const [toDoList, setToDoList] = useState<Todo[]>([])

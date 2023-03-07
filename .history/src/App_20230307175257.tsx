@@ -33,7 +33,7 @@ const App = () => {
       id: Math.floor(Math.random()* 1000),
       title: newTitle,
       description: newDescription,
-      date: new Date(newDate),
+      date: new Date(),
     };
     setToDoList([...toDoList, newToDo]);
     setNewTitle("");
@@ -51,6 +51,7 @@ const App = () => {
     setToDoList(filteredToDos)
   }
 
+
   return (
     <div className='App'>
       
@@ -65,7 +66,7 @@ const App = () => {
              placeholder="Type your description"
              onChange={handleDescription}
              />     
-      <input type="datetime-local" 
+      <input type="text" 
              value={newDate}
              placeholder={"Set Date"}
              onChange={handleDate}
@@ -76,18 +77,17 @@ const App = () => {
       </form>
       
       <div>
-        
         {toDoList.map((task) => {
           return (
             <div>
-              <h1>{task.title}</h1>
-              <p>{task.description}</p>
-              <p>{task.date.toLocaleString()}</p>
-              <button onClick={() => deleteTask(task.id)}>
-                X
-              </button>
-              </div>
-            )})}
+            <h1>{task.title}</h1>
+            <p>{task.description}</p>
+            <p>{task.date.toLocaleString()}</p>
+            <button onClick={() => deleteTask(task.id)}>
+              X
+            </button>
+        </div>
+        )})}
       
       </div>
     </div>

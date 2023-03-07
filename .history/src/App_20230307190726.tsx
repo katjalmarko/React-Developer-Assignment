@@ -10,15 +10,10 @@ interface Todo {
 
 const App = () => {
 
-  const [newTitle, setNewTitle] = useState("")
   const [newDescription, setNewDescription] = useState("")
   const [newDate, setNewDate] = useState("")
   const [toDoList, setToDoList] = useState<Todo[]>([])
-  
 
-  const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewTitle(e.target.value)
-  }
 
   const handleDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewDescription(e.target.value)
@@ -31,7 +26,7 @@ const App = () => {
   const addTask = () => {
     const newToDo: Todo = {
       id: Math.floor(Math.random()* 1000),
-      title: newTitle,
+      title: props.newTitle,
       description: newDescription,
       date: new Date(newDate),
     };
