@@ -1,13 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 
+type Task = {
+  event: string;
+  newToDoList: string;
+}
+
 const App = () => {
 
-  const [newTask, setNewTask] = useState<string>("")
-  const [toDoList, setToDoList] = useState<string[]>([])
+  const [newTask, setNewTask] = useState("")
+  const [toDoList, setToDoList] = useState([])
   
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event) => {
     event.preventDefault()
     setNewTask(event.target.value)
   }
@@ -17,7 +22,7 @@ const App = () => {
     setToDoList(newToDoList)
   }
 
-  const confirmTask = (event: React.FormEvent<HTMLFormElement>) => {
+  const confirmTask = (event) => {
     event.preventDefault()
     setNewTask("")
   }

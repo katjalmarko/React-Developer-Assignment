@@ -7,7 +7,7 @@ const App = () => {
   const [toDoList, setToDoList] = useState<string[]>([])
   
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setNewTask(event.target.value)
   }
