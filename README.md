@@ -4,9 +4,9 @@ Required functionality:
 Creating a ToDo list (there can be more than one)
   
 ToDo list contains:
-    - name
-    - ToDo items
-    - Adding a ToDo item to the list
+- name
+- ToDo items
+- Adding a ToDo item to the list
   
 ToDo item contains:
     - caption
