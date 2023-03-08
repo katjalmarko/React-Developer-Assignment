@@ -55,7 +55,7 @@ const App = () => {
 
   const completeTask = (id: number) => {
     const completedToDos = toDoList.map((task) => {
-      if (task.id === id) {
+      if (task.id === id) retun{
         task.completion = !task.completion
       }
       return task;

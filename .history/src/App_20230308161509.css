@@ -2,6 +2,7 @@ body {
   background-image: url(./images/bckgrnd.jpg);
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: ;
 }
 
 .App {
@@ -41,8 +42,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-}
-
-.task.completed {
-  color: green;
 }

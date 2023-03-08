@@ -38,7 +38,7 @@ const App = () => {
       date: new Date(newDate),
       completion: false,
     };
-    setToDoList([...toDoList, newToDo]);
+    ...tsetToDoList([oDoList, newToDo]);
     setNewTitle("");
     setNewDescription("");
     setNewDate("");

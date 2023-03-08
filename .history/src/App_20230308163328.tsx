@@ -54,12 +54,7 @@ const App = () => {
   }
 
   const completeTask = (id: number) => {
-    const completedToDos = toDoList.map((task) => {
-      if (task.id === id) {
-        task.completion = !task.completion
-      }
-      return task;
-    })
+    const completedToDos = toDoList.map((task) => task.id === id ? : <h1>nejde</h1>)
     setToDoList(completedToDos)
   }
 
@@ -93,7 +88,7 @@ const App = () => {
         
         {toDoList.map((task) => {
           return (
-            <div className={`task ${task.completion ? "completed" : ""}`}>
+            <div>
               <h1>{task.title}</h1>
               <p>{task.description}</p>
               <p>{task.date.toLocaleString()}</p>

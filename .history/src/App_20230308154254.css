@@ -1,11 +1,6 @@
-body {
-  background-image: url(./images/bckgrnd.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 .App {
   text-align: center;
+  background-image: url(/src/);
 }
 
 .App-logo {
@@ -41,8 +36,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-}
-
-.task.completed {
-  color: green;
 }

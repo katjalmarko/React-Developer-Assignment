@@ -44,5 +44,6 @@ body {
 }
 
 .task.completed {
-  color: green;
+  text-decoration: green;
+  opacity: 50%;
 }

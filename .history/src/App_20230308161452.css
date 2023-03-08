@@ -42,7 +42,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
-.task.completed {
-  color: green;
-}

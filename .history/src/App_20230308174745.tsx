@@ -56,9 +56,10 @@ const App = () => {
   const completeTask = (id: number) => {
     const completedToDos = toDoList.map((task) => {
       if (task.id === id) {
-        task.completion = !task.completion
+        return {...task, completion: true};
+      } else {
+        return task
       }
-      return task;
     })
     setToDoList(completedToDos)
   }

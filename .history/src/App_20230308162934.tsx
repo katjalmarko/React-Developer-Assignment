@@ -54,13 +54,7 @@ const App = () => {
   }
 
   const completeTask = (id: number) => {
-    const completedToDos = toDoList.map((task) => {
-      if (task.id === id) {
-        task.completion = !task.completion
-      }
-      return task;
-    })
-    setToDoList(completedToDos)
+    const completedToDos = toDoList.map((task) => task.id === id ? )
   }
 
   return (
@@ -93,14 +87,14 @@ const App = () => {
         
         {toDoList.map((task) => {
           return (
-            <div className={`task ${task.completion ? "completed" : ""}`}>
+            <div>
               <h1>{task.title}</h1>
               <p>{task.description}</p>
               <p>{task.date.toLocaleString()}</p>
               <button onClick={() => deleteTask(task.id)}>
                 X
               </button>
-              <button onClick={() => completeTask(task.id)}>
+              <button>
                 Completed
               </button>
             </div>

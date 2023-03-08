@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import './App.css'
 
 interface Todo {
   id: number,
@@ -49,24 +48,18 @@ const App = () => {
   }
 
   const deleteTask = (id: number) => {
-    const filteredToDos = toDoList.filter((task) => task.id !== id)
+    const filteredToDos = toDoList.filter((task) => 
+    task.id !== id)
     setToDoList(filteredToDos)
   }
 
   const completeTask = (id: number) => {
-    const completedToDos = toDoList.map((task) => {
-      if (task.id === id) {
-        task.completion = !task.completion
-      }
-      return task;
-    })
-    setToDoList(completedToDos)
+    const completedToDos = 
   }
 
   return (
     <div className='App'>
-      
-      <h1>ToDo List</h1>
+      <h1></h1>
       
       <form onSubmit={confirmTask}>
       <input type="text"
@@ -93,14 +86,14 @@ const App = () => {
         
         {toDoList.map((task) => {
           return (
-            <div className={`task ${task.completion ? "completed" : ""}`}>
+            <div>
               <h1>{task.title}</h1>
               <p>{task.description}</p>
               <p>{task.date.toLocaleString()}</p>
               <button onClick={() => deleteTask(task.id)}>
                 X
               </button>
-              <button onClick={() => completeTask(task.id)}>
+              <button onClick={}>
                 Completed
               </button>
             </div>

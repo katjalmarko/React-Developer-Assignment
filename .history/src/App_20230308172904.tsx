@@ -79,7 +79,7 @@ const App = () => {
              placeholder="Type your description"
              onChange={handleDescription}
              />     
-      <input type="datetime-local" 
+      <input type="date" 
              value={newDate}
              placeholder={"Set Date"}
              onChange={handleDate}

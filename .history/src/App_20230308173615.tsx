@@ -93,7 +93,7 @@ const App = () => {
         
         {toDoList.map((task) => {
           return (
-            <div className={`task ${task.completion ? "completed" : ""}`}>
+            <div className= "task>
               <h1>{task.title}</h1>
               <p>{task.description}</p>
               <p>{task.date.toLocaleString()}</p>
