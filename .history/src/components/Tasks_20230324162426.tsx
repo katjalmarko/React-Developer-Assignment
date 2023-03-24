@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { db, auth } from "../config/firebase";
-import { getDocs, collection, addDoc, deleteDoc, updateDoc, doc } from "firebase/firestore";
+import { db } from "../config/firebase";
+import { getDocs, collection, addDoc, deleteDoc, doc } from "firebase/firestore";
 
 interface Todo {
   id: string,
@@ -12,16 +12,12 @@ interface Todo {
 
 function Tasks() {
 
-// NEW TASK STATES
 const [toDoList, setToDoList] = useState<Todo[]>([])
 const [newTitle, setNewTitle] = useState<string>("")
 const [newDescription, setNewDescription] = useState<string>("")
 const [newDate, setNewDate] = useState<Date>(new Date())
 const [isCompleted, setIsCompleted] = useState<boolean>(false);
-// dorobiť completion!!!!
-
-// UPDATE TITLE STATE
-const [updatedTitle, setUpdatedTitle] = useState<string>("")
+// dorobiť completion
 
 const toDoItemsCollectionRef = collection(db, "toDoItems")
 
@@ -53,17 +49,6 @@ const deleteTask = async (id: string) => {
   }  
 }  
 
-const updateTaskTitle = async (id: string) => {
-  try {
-    const taskDoc = doc(db, "toDoItems", id)
-    await updateDoc(taskDoc, {title: updatedTitle})
-    await getToDoList();
-    setUpdatedTitle("");
-  } catch (err) {
-    console.error(err);
-  }  
-}  
-
 useEffect(() => {  
   getToDoList();
 }, []);
@@ -75,7 +60,6 @@ const createNewTask = async () => {
     description: newDescription,
     date: newDate,
     completion: isCompleted,
-    userId: auth?.currentUser?.uid,
     });
       setNewTitle("");
       setNewDescription("");
@@ -123,11 +107,9 @@ const createNewTask = async () => {
             <button onClick={() => deleteTask(todo.id)}>Delete Task</button>
 
             <input type="text"
-                   placeholder='Change the Title'
-                   value={updatedTitle}
-                   onChange={(e) => setUpdatedTitle(e.target.value)}
+                   placeholder='Change this Title'
                    />
-            <button onClick={() => updateTaskTitle(todo.id)}>Update Title</button>       
+                   
           </div>
         ))}
       </div>

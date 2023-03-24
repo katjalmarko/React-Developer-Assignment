@@ -75,7 +75,7 @@ const createNewTask = async () => {
     description: newDescription,
     date: newDate,
     completion: isCompleted,
-    userId: auth?.currentUser?.uid,
+    userId: auth?.currentUser.uid
     });
       setNewTitle("");
       setNewDescription("");

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { db, auth } from "../config/firebase";
+import { db } from "../config/firebase";
 import { getDocs, collection, addDoc, deleteDoc, updateDoc, doc } from "firebase/firestore";
 
 interface Todo {
@@ -21,7 +21,7 @@ const [isCompleted, setIsCompleted] = useState<boolean>(false);
 // dorobiť completion!!!!
 
 // UPDATE TITLE STATE
-const [updatedTitle, setUpdatedTitle] = useState<string>("")
+const [updatedTitle, setUpdatedTitle] = useState<{ [key: string]: string }>({})
 
 const toDoItemsCollectionRef = collection(db, "toDoItems")
 
@@ -56,9 +56,12 @@ const deleteTask = async (id: string) => {
 const updateTaskTitle = async (id: string) => {
   try {
     const taskDoc = doc(db, "toDoItems", id)
+    const newToDoList = [...toDoList];
+    const todoIndex = newToDoList.findIndex(todo => todo.id === id);
+    newToDoList[todoIndex] = { ...newToDoList[todoIndex], title: updatedTitle[id] }
     await updateDoc(taskDoc, {title: updatedTitle})
     await getToDoList();
-    setUpdatedTitle("");
+    setUpdatedTitle({});
   } catch (err) {
     console.error(err);
   }  
@@ -75,7 +78,6 @@ const createNewTask = async () => {
     description: newDescription,
     date: newDate,
     completion: isCompleted,
-    userId: auth?.currentUser?.uid,
     });
       setNewTitle("");
       setNewDescription("");

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { db, auth } from "../config/firebase";
+import { db } from "../config/firebase";
 import { getDocs, collection, addDoc, deleteDoc, updateDoc, doc } from "firebase/firestore";
 
 interface Todo {
@@ -75,7 +75,7 @@ const createNewTask = async () => {
     description: newDescription,
     date: newDate,
     completion: isCompleted,
-    userId: auth?.currentUser?.uid,
+    userId
     });
       setNewTitle("");
       setNewDescription("");

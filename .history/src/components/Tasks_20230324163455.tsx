@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { db, auth } from "../config/firebase";
+import { db } from "../config/firebase";
 import { getDocs, collection, addDoc, deleteDoc, updateDoc, doc } from "firebase/firestore";
 
 interface Todo {
@@ -47,6 +47,7 @@ const deleteTask = async (id: string) => {
   try {
     const taskDoc = doc(db, "toDoItems", id)
     await deleteDoc(taskDoc)
+    setUpdatedTitle(""),
     await getToDoList();
   } catch (err) {
     console.error(err);
@@ -58,7 +59,6 @@ const updateTaskTitle = async (id: string) => {
     const taskDoc = doc(db, "toDoItems", id)
     await updateDoc(taskDoc, {title: updatedTitle})
     await getToDoList();
-    setUpdatedTitle("");
   } catch (err) {
     console.error(err);
   }  
@@ -75,7 +75,6 @@ const createNewTask = async () => {
     description: newDescription,
     date: newDate,
     completion: isCompleted,
-    userId: auth?.currentUser?.uid,
     });
       setNewTitle("");
       setNewDescription("");
@@ -124,7 +123,6 @@ const createNewTask = async () => {
 
             <input type="text"
                    placeholder='Change the Title'
-                   value={updatedTitle}
                    onChange={(e) => setUpdatedTitle(e.target.value)}
                    />
             <button onClick={() => updateTaskTitle(todo.id)}>Update Title</button>       
