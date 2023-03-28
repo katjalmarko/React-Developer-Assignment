@@ -20,9 +20,6 @@ const [newDate, setNewDate] = useState<Date>(new Date())
 const [isCompleted, setIsCompleted] = useState<boolean>(false);
 // dorobiť completion!!!!
 
-// UPDATE TITLE STATE
-const [updatedTitle, setUpdatedTitle] = useState<string>("")
-
 const toDoItemsCollectionRef = collection(db, "toDoItems")
 
 
@@ -48,17 +45,6 @@ const deleteTask = async (id: string) => {
     const taskDoc = doc(db, "toDoItems", id)
     await deleteDoc(taskDoc)
     await getToDoList();
-  } catch (err) {
-    console.error(err);
-  }  
-}  
-
-const updateTaskTitle = async (id: string) => {
-  try {
-    const taskDoc = doc(db, "toDoItems", id)
-    await updateDoc(taskDoc, {title: updatedTitle})
-    await getToDoList();
-    setUpdatedTitle("");
   } catch (err) {
     console.error(err);
   }  
@@ -121,13 +107,7 @@ const createNewTask = async () => {
             <p>Completed? </p>
             
             <button onClick={() => deleteTask(todo.id)}>Delete Task</button>
-
-            <input type="text"
-                   placeholder='Change the Title'
-                   value={updatedTitle}
-                   onChange={(e) => setUpdatedTitle(e.target.value)}
-                   />
-            <button onClick={() => updateTaskTitle(todo.id)}>Update Title</button>       
+      
           </div>
         ))}
       </div>

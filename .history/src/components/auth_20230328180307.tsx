@@ -6,9 +6,9 @@ const Auth = () => {
   // console.log(auth?.currentUser?.email);
 
   const signInWithGoogle = async () => {
-    try {
+   
       await signInWithPopup(auth, googleProvider)
-    } catch (err) {
+  
       console.error(err)
     }
   }
