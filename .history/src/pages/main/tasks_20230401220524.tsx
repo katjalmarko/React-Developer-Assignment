@@ -137,7 +137,7 @@ const createNewTask = async () => {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
         {toDoList.map((todo) => (
-          <div key={todo.id} className="bg-gray-200/20 border rounded-md p-4">
+          <div key={todo.id} className="bg-gray-200/60 border rounded-md p-4">
             <h1 className="text-lg font-bold mb-2">{todo.title}</h1>
             <p className="mb-2">Description: {todo.description}</p>
             <p className="mb-2">
@@ -148,21 +148,13 @@ const createNewTask = async () => {
               })}
             </p>
             <p className="mb-2">Completed? </p>
-              
-            <div className='flex justify-between'>
+  
             <button
               onClick={() => deleteTask(todo.id)}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2"
             >
               Delete Task
             </button>
-            <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2"
-            >
-              Complete Task
-            </button>
-            </div>
-
           </div>
         ))}
       </div>

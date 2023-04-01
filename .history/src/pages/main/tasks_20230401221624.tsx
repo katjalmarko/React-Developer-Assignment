@@ -111,7 +111,7 @@ const createNewTask = async () => {
         </button>
       </div>
   
-      <div className='flex items-center'>
+      {/* <div className='flex items-center'>
         <h1 className="text-lg font-bold mb-4 mr-6">Find the Task you're looking for</h1>
         <input 
           className="border rounded-md px-4 py-2 w-full lg:w-64 mb-6"
@@ -131,7 +131,7 @@ const createNewTask = async () => {
         <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
           Completed Tasks
         </button>
-      </div>
+      </div> */}
   
       <h1 className="text-2xl font-bold mt-12 mb-6">Your To-Do List</h1>
       

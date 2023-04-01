@@ -133,7 +133,7 @@ const createNewTask = async () => {
         </button>
       </div>
   
-      <h1 className="text-2xl font-bold mt-12 mb-6">Your To-Do List</h1>
+      <h1 className="h-8 w-full bg-gray-400/20 text-2xl font-bold mt-12 mb-6">Your To-Do List</h1>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
         {toDoList.map((todo) => (

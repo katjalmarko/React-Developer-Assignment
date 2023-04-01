@@ -148,8 +148,7 @@ const createNewTask = async () => {
               })}
             </p>
             <p className="mb-2">Completed? </p>
-              
-            <div className='flex justify-between'>
+  
             <button
               onClick={() => deleteTask(todo.id)}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2"
@@ -157,12 +156,9 @@ const createNewTask = async () => {
               Delete Task
             </button>
             <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2"
             >
               Complete Task
             </button>
-            </div>
-
           </div>
         ))}
       </div>

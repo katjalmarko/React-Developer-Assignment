@@ -105,22 +105,21 @@ const createNewTask = async () => {
         />
         <button
           onClick={createNewTask}
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded w-full lg:w-auto"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full lg:w-auto"
         >
           Create Task
         </button>
       </div>
   
-      <div className='flex items-center'>
-        <h1 className="text-lg font-bold mb-4 mr-6">Find the Task you're looking for</h1>
-        <input 
-          className="border rounded-md px-4 py-2 w-full lg:w-64 mb-6"
-          type="text" 
-          placeholder='Type your Task'
-        />
-      </div>
+            
+      <h1 className="text-lg font-bold mb-4">Find the Task you're looking for</h1>
+      <input 
+        className="border rounded-md px-4 py-2 w-full lg:w-64 mb-6"
+        type="text" 
+        placeholder='Tasks filtering'
+      />
   
-      <div className="flex flex-col items-center lg:flex-row lg:justify-center space-x-4 mb-6">
+      <div className="flex flex-col lg:flex-row lg:justify-center space-x-4 mb-6">
         <h1 className="text-lg font-bold">Filter your Tasks here</h1>
         <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
           All Tasks
@@ -137,7 +136,7 @@ const createNewTask = async () => {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
         {toDoList.map((todo) => (
-          <div key={todo.id} className="bg-gray-200/20 border rounded-md p-4">
+          <div key={todo.id} className="border rounded-md p-4">
             <h1 className="text-lg font-bold mb-2">{todo.title}</h1>
             <p className="mb-2">Description: {todo.description}</p>
             <p className="mb-2">
@@ -148,21 +147,13 @@ const createNewTask = async () => {
               })}
             </p>
             <p className="mb-2">Completed? </p>
-              
-            <div className='flex justify-between'>
+  
             <button
               onClick={() => deleteTask(todo.id)}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2"
             >
               Delete Task
             </button>
-            <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2"
-            >
-              Complete Task
-            </button>
-            </div>
-
           </div>
         ))}
       </div>

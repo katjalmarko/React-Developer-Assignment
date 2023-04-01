@@ -138,7 +138,7 @@ const createNewTask = async () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
         {toDoList.map((todo) => (
           <div key={todo.id} className="bg-gray-200/20 border rounded-md p-4">
-            <h1 className="text-lg font-bold mb-2">{todo.title}</h1>
+            <h1 className="flex items-center text-lg font-bold mb-2">{todo.title}</h1>
             <p className="mb-2">Description: {todo.description}</p>
             <p className="mb-2">
               Date and Time:{" "}
