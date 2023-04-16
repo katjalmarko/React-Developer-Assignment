@@ -7,8 +7,8 @@ const Login = () => {
     await signInWithPopup(auth, googleProvider)}
 
 
-  return <div className='flex h-screen w-screen justify-center items-center font-black text-4xl animate-pulse'>
-            <button onClick={signInWithGoogle}>Click Here to Continue...</button>
+  return <div className='flex h-screen w-screen justify-center items-center font-black text-5xl text-white animate-pulse'>
+            <button onClick={signInWithGoogle}>Click to Continue...</button>
         </div>
 }
 
