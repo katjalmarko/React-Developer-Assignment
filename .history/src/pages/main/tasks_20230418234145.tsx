@@ -192,38 +192,43 @@ function Tasks() {
               </div>
     
               <h6 className="text-center text-2xl font-black text-white text-stroke text-stroke-black">
-                {" "}
-                {new Date(task.date).toLocaleString(undefined, {
-                  dateStyle: "short",
-                  timeStyle: "short",
-                })}
-              </h6>
-              <h3 className="mb-2 text-center text-3xl font-bold mt-4 text-gray-900">
-                {task.title}
-              </h3>
-              <p className="flex flex-col mb-2 mt-4 text-center">
-                Description: {task.description}
-              </p>
+{" "}
+{new Date(task.date).toLocaleString(undefined, {
+dateStyle: "short",
+timeStyle: "short",
+})}
+</h6>
+<h3 className="mb-2 text-center text-3xl font-bold mt-4 text-gray-900">
+{task.title}
+</h3>
+<p className="flex flex-col mb-2 mt-4 text-center">
+Description: {task.description}
+</p>
               
-      <div className="flex justify-between">
-        <button
-          onClick={() => handleDelete(task.id)}
-          className="bg-red-700/90 hover:bg-red-800/90 text-white font-bold py-2 px-4 rounded mt-4"
-        >
-          Delete Task
-        </button>
-        <button
-          className={`bg-green-600/80 hover:bg-green-800/80 text-white font-bold py-2 px-4 rounded mt-4 ${
-            task.completion ? "bg-orange-500/80 hover:bg-orange-700/80" : ""
-          }`}
-          onClick={() => handleCompletion(task.id, task.completion)}
-        >
-          {task.completion ? "Undo Task" : "Complete Task"}
-        </button>
+            <div className='flex justify-between'>
+              <button
+                onClick={() => deleteTask(todo.id)}
+                className="bg-red-700/90 hover:bg-red-800/90 text-white font-bold py-2 px-4 rounded mt-4"
+              >
+                Delete Task
+              </button>
+              <button
+                className={`bg-green-600/80 hover:bg-green-800/80 text-white font-bold py-2 px-4 rounded mt-4 
+                              ${todo.completion ? 'bg-orange-500/80 hover:bg-orange-700/80' : ''}`}
+                onClick={() => {
+                  if (todo.completion) {
+                    uncompleteTask(todo.id)
+                  } else {
+                    completeTask(todo.id)
+                  }}}
+                  >
+                {todo.completion ? 'Undo Task' : 'Complete Task'}
+              </button>
+            </div>
+
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
     </div>
   );
 }

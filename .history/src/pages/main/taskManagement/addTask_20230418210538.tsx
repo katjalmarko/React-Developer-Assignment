@@ -1,14 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { addTask } from '../../../features/tasksSlice';
 
 interface AddTaskProps {
-  onAddTask: (newTask: {
-    title: string;
-    description: string;
-    date: Date;
-  }) => void;
+  onAddTask: typeof addTask;
 }
 
-export const AddTask = ({ onAddTask }: AddTaskProps) => {
+const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   const [newTitle, setNewTitle] = useState<string>('');
   const [newDescription, setNewDescription] = useState<string>('');
   const [newDate, setNewDate] = useState<Date>(new Date());
@@ -45,13 +42,13 @@ export const AddTask = ({ onAddTask }: AddTaskProps) => {
       className="border rounded-md px-4 py-2 w-full sm:w-48 md:w-48 lg:w-48 bg-gray-200/20 text-white"
     />
     <button
-      onClick={handleSubmit}
+      onClick={addTask}
       className="bg-gray-400/40 hover:bg-gray-500/80 text-white font-bold py-2 px-4 rounded w-full sm:w-auto md:w-auto lg:w-auto"
     >
       Submit
     </button>
   </div>
-    );
-  };
-  
-  export default AddTask;
+  );
+};
+
+export default AddTask;

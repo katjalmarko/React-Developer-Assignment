@@ -202,10 +202,10 @@ function Tasks() {
                 {task.title}
               </h3>
               <p className="flex flex-col mb-2 mt-4 text-center">
-                Description: {task.description}
+              Description: {task.description}
               </p>
               
-      <div className="flex justify-between">
+              <div className="flex justify-between">
         <button
           onClick={() => handleDelete(task.id)}
           className="bg-red-700/90 hover:bg-red-800/90 text-white font-bold py-2 px-4 rounded mt-4"

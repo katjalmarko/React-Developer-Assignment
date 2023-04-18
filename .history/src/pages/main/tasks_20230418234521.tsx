@@ -214,7 +214,7 @@ function Tasks() {
         </button>
         <button
           className={`bg-green-600/80 hover:bg-green-800/80 text-white font-bold py-2 px-4 rounded mt-4 ${
-            task.completion ? "bg-orange-500/80 hover:bg-orange-700/80" : ""
+          task.completion ? "bg-orange-500/80 hover:bg-orange-700/80" : ""
           }`}
           onClick={() => handleCompletion(task.id, task.completion)}
         >
