@@ -1,0 +1,12 @@
+"extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended", "prettier"]
+
+
+
+{
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "jsxBracketSameLine": true
+}

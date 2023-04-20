@@ -1,14 +1,10 @@
+import React from 'react';
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-
 interface AddTaskProps {
-  onAddTask: (newTask: {
-    title: string;
-    description: string;
-    date: Date;
-  }) => void;
+  onAddTask: (newTask: { title: string; description: string; date: Date }) => void;
 }
 
 const AddTaskSchema = Yup.object().shape({
@@ -20,9 +16,7 @@ const AddTaskSchema = Yup.object().shape({
     .min(3, 'At least 3 characters!')
     .max(50, '50 characters At most!')
     .required('Description is required!'),
-  date: Yup.date()
-    .min(new Date(), 'Time is Up!')
-    .required('Date is required!'),
+  date: Yup.date().min(new Date(), 'Time is Up!').required('Date is required!'),
 });
 
 export const AddTask = ({ onAddTask }: AddTaskProps) => {
@@ -55,45 +49,56 @@ export const AddTask = ({ onAddTask }: AddTaskProps) => {
       }}
     >
       {({ setFieldValue, values }) => (
-        <Form className="flex flex-col justify-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8 w-full mb-6">
-          <div className="flex flex-col w-full sm:w-56 md:w-64 lg:w-56">
+        <Form className='flex flex-col justify-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8 w-full mb-6'>
+          <div className='flex flex-col w-full sm:w-56 md:w-64 lg:w-56'>
             <Field
-              name="title"
-              type="text"
-              placeholder="Title"
-              className="border rounded-md px-4 py-2 w-full bg-gray-200/20 text-white font-bold text-2xl h-14"
+              name='title'
+              type='text'
+              placeholder='Title'
+              className='border rounded-md px-4 py-2 w-full bg-gray-200/20 text-white font-bold text-2xl h-14'
             />
-            <ErrorMessage name="title" component="div" className="flex justify-center text-red-500 font-bold mt-2" />
+            <ErrorMessage
+              name='title'
+              component='div'
+              className='flex justify-center text-red-500 font-bold mt-2'
+            />
           </div>
-  
-          <div className="flex flex-col w-full sm:w-96">
+
+          <div className='flex flex-col w-full sm:w-96'>
             <Field
-              name="description"
-              type="text"
-              placeholder="Description"
-              className="border rounded-md px-4 py-2 w-full bg-gray-200/20 text-white font-bold text-2xl h-14"
+              name='description'
+              type='text'
+              placeholder='Description'
+              className='border rounded-md px-4 py-2 w-full bg-gray-200/20 text-white font-bold text-2xl h-14'
             />
-            <ErrorMessage name="description" component="div" className="flex justify-center text-red-500 font-bold mt-2" />
+            <ErrorMessage
+              name='description'
+              component='div'
+              className='flex justify-center text-red-500 font-bold mt-2'
+            />
           </div>
-  
-          <div className="flex flex-col lg:w-72 sm:w-48">
+
+          <div className='flex flex-col lg:w-72 sm:w-48'>
             <input
-              name="date"
-              type="datetime-local"
+              name='date'
+              type='datetime-local'
               value={new Date(values.date.getTime() - values.date.getTimezoneOffset() * 60000)
                 .toISOString()
                 .substring(0, 16)}
-              onChange={(e) => setFieldValue("date", new Date(e.target.value))}
-              className="border rounded-md px-4 py-2 w-full bg-gray-200/20 text-white font-bold text-xl h-14"
+              onChange={(e) => setFieldValue('date', new Date(e.target.value))}
+              className='border rounded-md px-4 py-2 w-full bg-gray-200/20 text-white font-bold text-xl h-14'
             />
-            <ErrorMessage name="date" component="div" className="flex justify-center text-red-500 font-bold mt-2" />
+            <ErrorMessage
+              name='date'
+              component='div'
+              className='flex justify-center text-red-500 font-bold mt-2'
+            />
           </div>
-  
-          <div className="flex flex-col w-full sm:w-auto">
+
+          <div className='flex flex-col w-full sm:w-auto'>
             <button
-              className="bg-gray-400/40 hover:bg-gray-500/80 text-white font-bold text-2xl py-2 px-4 rounded w-full h-14 cursor-pointer"
-              onClick={() => 
-                handleSubmit}
+              className='bg-gray-400/40 hover:bg-gray-500/80 text-white font-bold text-2xl py-2 px-4 rounded w-full h-14 cursor-pointer'
+              onClick={() => handleSubmit}
             >
               Submit
             </button>
@@ -102,6 +107,6 @@ export const AddTask = ({ onAddTask }: AddTaskProps) => {
       )}
     </Formik>
   );
-  };
-  
-  export default AddTask;
+};
+
+export default AddTask;

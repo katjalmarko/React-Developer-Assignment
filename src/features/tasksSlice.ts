@@ -55,7 +55,8 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { setTasks, setFilter, setFilterValue, completeTask, uncompleteTask, deleteTask } = tasksSlice.actions;
+export const { setTasks, setFilter, setFilterValue, completeTask, uncompleteTask, deleteTask } =
+  tasksSlice.actions;
 
 export const selectTasks = (state: RootState) => state.tasks.tasks;
 export const selectFilter = (state: RootState) => state.tasks.filter;

@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './App.css'
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './config/firebase';
@@ -9,11 +9,11 @@ import Login from './pages/login/login';
 import Tasks from './pages/main/tasks';
 import Navbar from './components/navbar';
 import Contact from './pages/contact/contact';
-import Code from './pages/code/code';
+import Code from './pages/code/code'
 
 const App = () => {
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+  const user = useSelector(selectUser)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
@@ -33,16 +33,16 @@ const App = () => {
         <div>
           <Router>
             <Navbar />
-            <Routes>
-              <Route path='/' element={<Tasks />} />
-              <Route path='/code' element={<Code />} />
-              <Route path='/contact' element={<Contact />} />
-            </Routes>
+              <Routes>
+                <Route path='/' element={<Tasks />} />
+                <Route path='/code' element={<Code />} />
+                <Route path='/contact' element={<Contact/> } />
+              </Routes>
           </Router>
         </div>
       )}
     </div>
   );
-};
+}
 
-export default App;
+export default App
