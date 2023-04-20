@@ -11,7 +11,8 @@ const Code: React.FC = () => {
           efficient codebase.
         </p>
         <p className="text-2xl font-bold mt-20 mb-10 text-center">
-          This project demonstrates proficiency in the following technologies:
+          Leveraging a diverse array of technologies and libraries, this project demonstrates proficiency in the following
+          areas:
         </p>
         <ul className="list-disc pl-6 text-center mx-auto" style={{ maxWidth: '32rem' }}>
           <li>TypeScript for strong typing and maintainability</li>
@@ -38,11 +39,11 @@ const Code: React.FC = () => {
           <li>Effortless item filtering and searching</li>
           <li>Real-time data persistence with Firebase</li>
         </ul>
-        <div className="text-2xl font-bold pl-6 mt-16 mb-10 text-center mx-auto animate-pulse" style={{ maxWidth: '32rem' }}>
+        {/* <div className="text-2xl font-bold pl-6 mt-16 mb-10 text-center mx-auto animate-pulse" style={{ maxWidth: '32rem' }}>
             <a href="https://github.com/katjalmarko/React-Developer-Assignment#readme" target="_blank" rel="noopener noreferrer">
-              Click Here to see the Assignment!
+              Click Here for Complete Assignment!
             </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

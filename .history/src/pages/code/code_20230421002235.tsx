@@ -11,7 +11,8 @@ const Code: React.FC = () => {
           efficient codebase.
         </p>
         <p className="text-2xl font-bold mt-20 mb-10 text-center">
-          This project demonstrates proficiency in the following technologies:
+          Leveraging a diverse array of technologies and libraries, this project demonstrates proficiency in the following
+          areas:
         </p>
         <ul className="list-disc pl-6 text-center mx-auto" style={{ maxWidth: '32rem' }}>
           <li>TypeScript for strong typing and maintainability</li>
@@ -38,9 +39,15 @@ const Code: React.FC = () => {
           <li>Effortless item filtering and searching</li>
           <li>Real-time data persistence with Firebase</li>
         </ul>
-        <div className="text-2xl font-bold pl-6 mt-16 mb-10 text-center mx-auto animate-pulse" style={{ maxWidth: '32rem' }}>
-            <a href="https://github.com/katjalmarko/React-Developer-Assignment#readme" target="_blank" rel="noopener noreferrer">
-              Click Here to see the Assignment!
+        <div className="flex flex-col gap-8 text-large font-bold pl-6 mb-6 text-center mx-auto animate-pulse" style={{ maxWidth: '32rem' }}>
+            <a href="https://github.com/katjalmarko/ChatGPT-3-Custom" target="_blank" rel="noopener noreferrer">
+              Complete a
+            </a>
+            <a href="https://github.com/katjalmarko/DALL-E-2.0-clone" target="_blank" rel="noopener noreferrer">
+              2. Dall-E-2.0 - Custom
+            </a>
+            <a href="https://github.com/katjalmarko/LinkedIn_clone" target="_blank" rel="noopener noreferrer">
+              3. LinkedIn - Clone
             </a>
         </div>
       </div>

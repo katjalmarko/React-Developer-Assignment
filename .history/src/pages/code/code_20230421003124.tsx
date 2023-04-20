@@ -40,7 +40,7 @@ const Code: React.FC = () => {
         </ul>
         <div className="text-2xl font-bold pl-6 mt-16 mb-10 text-center mx-auto animate-pulse" style={{ maxWidth: '32rem' }}>
             <a href="https://github.com/katjalmarko/React-Developer-Assignment#readme" target="_blank" rel="noopener noreferrer">
-              Click Here to see the Assignment!
+              Click Here for Complete Assignment!
             </a>
         </div>
       </div>
