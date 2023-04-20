@@ -182,18 +182,18 @@ function Tasks() {
                 </div>
               </div>
     
-              <h6 className="text-center text-2xl font-black text-white" style={{ textShadow: '0 0 10px black' }}>
+              <h6 className="text-center text-2xl font-black text-white" style={{ textShadow: '0 0 2px black' }}>
                 {" "}
                 {new Date(task.date).toLocaleString(undefined, {
                   dateStyle: "short",
                   timeStyle: "short",
                 })}
               </h6>
-              <h3 className="text-center text-3xl font-bold mt-4 text-gray-900" style={{ textShadow: '0 0 10px white' }}>
+              <h3 className="text-center text-3xl font-bold mt-4 text-gray-900" style={{ textShadow: '0 0 20px white' }}>
                 {task.title}
               </h3>
               <div className='flex justify-center text-center h-24' style={{wordWrap: "break-word"}}>
-                <p className="mt-2 text-white w-full" style={{ textShadow: '0 0 10px black' }}>
+                <p className="mt-2 text-white w-full" style={{ textShadow: '0 0 20px black' }}>
                   {task.description}
                 </p>
               </div>

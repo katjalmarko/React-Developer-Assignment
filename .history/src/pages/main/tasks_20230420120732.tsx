@@ -163,7 +163,7 @@ function Tasks() {
           </div>
         </div>
     
-        <h1 className="text-4xl lg:text-5xl font-bold mt-12 mb-10 text-white tracking-widest" style={{ textShadow: '0 0 20px black' }}>
+        <h1 className="text-4xl lg:text-5xl font-bold mt-12 mb-10 text-white tracking-widest" style={{ textShadow: '0 0 10px black' }}>
           Your To-Do List
         </h1>
     
@@ -189,11 +189,11 @@ function Tasks() {
                   timeStyle: "short",
                 })}
               </h6>
-              <h3 className="text-center text-3xl font-bold mt-4 text-gray-900" style={{ textShadow: '0 0 10px white' }}>
+              <h3 className="text-center text-3xl font-bold mt-4 text-gray-900" style={{ textShadow: '0 0 20px white' }}>
                 {task.title}
               </h3>
               <div className='flex justify-center text-center h-24' style={{wordWrap: "break-word"}}>
-                <p className="mt-2 text-white w-full" style={{ textShadow: '0 0 10px black' }}>
+                <p className="mt-2 text-white w-full" style={{ textShadow: '0 0 20px black' }}>
                   {task.description}
                 </p>
               </div>

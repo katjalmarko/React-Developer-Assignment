@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             ></path>
           </svg>
         </button>
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-widest animate-pulse text-white my-4 sm:my-0" style={{ textShadow: '0 0 20px white' }}>
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-widest animate-pulse text-white my-4 sm:my-0">
           Welcome to Task Manager
         </h1>
       </div>
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
       >
         <Link
           to="/"
-          className="flex items-center justify-center lg:gap-2 text-white bg-gradient-to-r rounded-2xl from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium text-sm px-4 py-2 mt-2 mr-2 mb-2 sm:mt-0 sm:mb-0"
+          className="flex items-center justify-center lg:gap-2 text-white bg-gradient-to-r rounded-2xl from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium text-sm px-4 py-2 mt-2 mr-2 mb-2 sm:mt-0 sm:mb-0 style={{ textShadow: '0 0 20px black' }}"
         >
           <span className="hidden sm:inline">Tasks</span>
           <AssignmentOutlinedIcon className="lg:ml-2 sm:ml-0" />

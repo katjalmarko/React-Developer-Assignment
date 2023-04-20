@@ -193,7 +193,7 @@ function Tasks() {
                 {task.title}
               </h3>
               <div className='flex justify-center text-center h-24' style={{wordWrap: "break-word"}}>
-                <p className="mt-2 text-white w-full" style={{ textShadow: '0 0 10px black' }}>
+                <p className="mt-2 text-white w-full" style={{ textShadow: '0 0 20px black' }}>
                   {task.description}
                 </p>
               </div>

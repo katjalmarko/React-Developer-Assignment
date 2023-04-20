@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             ></path>
           </svg>
         </button>
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-widest animate-pulse text-white my-4 sm:my-0" style={{ textShadow: '0 0 20px white' }}>
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl tracking-widest animate-pulse text-white my-4 sm:my-0">
           Welcome to Task Manager
         </h1>
       </div>
