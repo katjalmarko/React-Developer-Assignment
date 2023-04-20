@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
             I would love to meet new ambitious people in the coding field with whom we can move forward and create something significant together.
           </p>
           <p className="text-center mt-12">
-            I am currently looking for a Frontend or Full-stack Developer position, with the ability to learn quickly and become a valuable team member.
+            I am currently looking for a Frontend or Full-stack Web developer position, with the ability to learn quickly and become a valuable team member.
           </p>
           <p className="text-center mt-4 mb-6">
             💬 If you are interested in me, I would be glad to have a conversation.
