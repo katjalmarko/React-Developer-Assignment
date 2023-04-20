@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center" style={{ textShadow: '0 0 10px black' }}>
       <div className="w-full max-w-3xl p-8 mt-10 mb-10 mr-5 ml-5 bg-gray-700/60 border border-black rounded-lg shadow-md text-white">
         <h1 className="text-4xl mb-2 font-black text-center">Marko Katjal</h1>
-        <h2 className="text-2xl mb-6 font-black text-center">( Frontend Developer )</h2>
+        <h2 className="text-2xl mb-6 font-black text-center">( Frontend Dev )</h2>
         <div className="mb-6">
           <div className="text-center">
             <img
